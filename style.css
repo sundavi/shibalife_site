@@ -50,8 +50,8 @@ a { color: var(--pink-deep); }
 .hero .scene > img { width: 100%; height: auto; display: block; }
 .hero .scene.wide > img { height: min(78vh, 56.25vw); object-fit: cover; object-position: center 60%; }
 /* A long soft fade from the picture into the cream section below */
-.hero .scene::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 38%;
-  background: linear-gradient(to bottom, rgba(255,247,238,0), var(--cream)); pointer-events: none; }
+.hero .scene::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 20%;
+  background: linear-gradient(to bottom, rgba(255,247,238,0) 0%, rgba(255,247,238,.55) 55%, var(--cream) 100%); pointer-events: none; }
 .lockup { position: absolute; left: 25%; top: 7%; width: min(38vw, 560px); transform: translateX(-50%);
   filter: drop-shadow(0 10px 24px rgba(120, 60, 40, .22)); }
 .lockup img { display: block; width: 100%; height: auto; }
@@ -65,9 +65,10 @@ a { color: var(--pink-deep); }
 .wide-only { display: block; } .tall-only { display: none; }
 @media (max-width: 700px) {
   .wide-only { display: none; } .tall-only { display: block; }
-  .hero .scene.tall-only::after { height: 12%; }
+  .hero .scene.tall-only::after { height: 9%; }
+  .hero .cta-band { padding-top: 26px; }
 }
-.hero .cta-band { position: relative; background: var(--cream); padding: 6px 0 8px; text-align: center; }
+.hero .cta-band { position: relative; background: var(--cream); padding: 40px 0 8px; text-align: center; }
 .hero h1 { font-size: clamp(1.5rem, 4.6vw, 2.4rem); margin: 0 0 6px; line-height: 1.35; }
 .hero .lead { margin: 0 auto 20px; max-width: 42em; color: var(--ink-soft); font-size: clamp(1rem, 2.4vw, 1.15rem); }
 /* Fade-in as it arrives */
