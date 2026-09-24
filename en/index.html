@@ -69,7 +69,7 @@
       <a href="#features">Features</a>
       <a class="hide-sm" href="#screens">Screenshots</a>
       <a class="hide-sm" href="#faq">FAQ</a>
-      <a href="/privacy.html#en">Privacy</a>
+      <a class="hide-sm" href="/privacy.html#en">Privacy</a>
       <a href="/" hreflang="ja" lang="ja">日本語</a>
     </nav>
   </div>
@@ -77,11 +77,19 @@
 
 <main>
   <div class="hero">
-    <picture>
-      <source media="(max-width: 700px)" srcset="/img/hero_tall.jpg">
-      <img src="/img/hero_wide.jpg" width="1536" height="1024" alt="ShibaLife: Toshiko the red Shiba Inu peeking over the ShibaLife logo against cherry blossoms and the Tokyo skyline" fetchpriority="high">
-    </picture>
-    <div class="cta-band">
+    <div class="scene wide wide-only">
+      <img src="/img/hero_street.jpg" width="2400" height="1350" alt="Toshiko the red Shiba Inu out for a walk in ShibaLife's town" fetchpriority="high">
+      <div class="lockup" aria-hidden="true">
+        <img class="dog" src="/img/toshiko.png" width="800" height="800" alt="">
+        <img class="paws" src="/img/toshiko.png" width="800" height="800" alt="">
+        <img class="logo" src="/img/logo.png" width="1400" height="505" alt="">
+        <img class="ribbon" src="/img/ribbon.png" width="1100" height="367" alt="">
+      </div>
+    </div>
+    <div class="scene tall-only">
+      <img src="/img/hero_title.jpg" width="1206" height="1250" alt="The ShibaLife title screen: cherry blossoms, the Tokyo skyline and Toshiko peeking over the logo">
+    </div>
+    <div class="cta-band reveal">
       <div class="wrap">
         <h1>Life with Toshiko,<br>a gentle Shiba Inu walking game.</h1>
         <p class="lead">Pet her, play, decorate her room and go out for walks, down Harajuku's Cat Street or through a town that looks like your own.<br>Nothing to fail and nothing to grind: just small, happy moments every day.</p>
@@ -94,7 +102,7 @@
     </div>
   </div>
 
-  <section id="features">
+  <section data-reveal id="features">
     <div class="wrap">
       <h2>Every day with Toshiko</h2>
       <p class="sub">No tricky controls: everything works with one finger, at your own pace.</p>
@@ -109,7 +117,7 @@
     </div>
   </section>
 
-  <section id="screens" style="background: var(--paper); border-block: 1.5px solid var(--line);">
+  <section data-reveal id="screens" style="background: var(--paper); border-block: 1.5px solid var(--line);">
     <div class="wrap">
       <h2>Screenshots</h2>
       <p class="sub">Soft colours and an unhurried pace.</p>
@@ -122,7 +130,7 @@
     </div>
   </section>
 
-  <section id="town">
+  <section data-reveal id="town">
     <div class="wrap town">
       <div class="pics">
         <img src="/img/town_street.jpg" width="460" height="1000" loading="lazy" alt="A street lined with pastel shops">
@@ -140,7 +148,7 @@
     </div>
   </section>
 
-  <section class="promise">
+  <section data-reveal class="promise">
     <div class="wrap">
       <h2>Kind by design</h2>
       <p class="sub">Made with older players and first-time gamers in mind.</p>
@@ -183,5 +191,19 @@
     <p>© 2026 ShibaLife</p>
   </div>
 </footer>
+<script>
+  // Sections fade in as they scroll into view.
+  (function () {
+    var els = document.querySelectorAll('.reveal, [data-reveal] > .wrap');
+    els.forEach(function (e) { e.classList.add('reveal'); });
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (e) { io.observe(e); });
+    // Safety net: never leave anything hidden (fast jumps, old browsers, screenshots, crawlers).
+    setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 2500);
+  })();
+</script>
 </body>
 </html>

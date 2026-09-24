@@ -69,7 +69,7 @@
       <a href="#features">あそびかた</a>
       <a class="hide-sm" href="#screens">画面</a>
       <a class="hide-sm" href="#faq">よくある質問</a>
-      <a href="/privacy.html">プライバシー</a>
+      <a class="hide-sm" href="/privacy.html">プライバシー</a>
       <a href="/en/" hreflang="en" lang="en">English</a>
     </nav>
   </div>
@@ -77,11 +77,19 @@
 
 <main>
   <div class="hero">
-    <picture>
-      <source media="(max-width: 700px)" srcset="/img/hero_tall.jpg">
-      <img src="/img/hero_wide.jpg" width="1536" height="1024" alt="柴ライフ ShibaLife ── 桜と東京の街並みを背景に、ロゴから顔をのぞかせる赤柴のトシコ" fetchpriority="high">
-    </picture>
-    <div class="cta-band">
+    <div class="scene wide wide-only">
+      <img src="/img/hero_street.jpg" width="2400" height="1350" alt="ShibaLife の町並みを散歩する赤柴のトシコ" fetchpriority="high">
+      <div class="lockup" aria-hidden="true">
+        <img class="dog" src="/img/toshiko.png" width="800" height="800" alt="">
+        <img class="paws" src="/img/toshiko.png" width="800" height="800" alt="">
+        <img class="logo" src="/img/logo.png" width="1400" height="505" alt="">
+        <img class="ribbon" src="/img/ribbon.png" width="1100" height="367" alt="">
+      </div>
+    </div>
+    <div class="scene tall-only">
+      <img src="/img/hero_title.jpg" width="1206" height="1250" alt="柴ライフ ShibaLife のタイトル画面：桜と東京の街並み、ロゴから顔をのぞかせるトシコ">
+    </div>
+    <div class="cta-band reveal">
       <div class="wrap">
         <h1>赤柴のトシコと暮らす、<br>やさしいお散歩ゲーム。</h1>
         <p class="lead">なでて、遊んで、お部屋を模様替えして、いっしょにお散歩。原宿キャットストリートも、あなたの街も。<br>がんばらなくていい、毎日のちいさなしあわせ。</p>
@@ -94,7 +102,7 @@
     </div>
   </div>
 
-  <section id="features">
+  <section data-reveal id="features">
     <div class="wrap">
       <h2>トシコとの毎日</h2>
       <p class="sub">むずかしい操作はありません。指一本で、トシコとの時間をのんびり楽しめます。</p>
@@ -109,7 +117,7 @@
     </div>
   </section>
 
-  <section id="screens" style="background: var(--paper); border-block: 1.5px solid var(--line);">
+  <section data-reveal id="screens" style="background: var(--paper); border-block: 1.5px solid var(--line);">
     <div class="wrap">
       <h2>ゲーム画面</h2>
       <p class="sub">やわらかい色と、ゆったりした時間。</p>
@@ -122,7 +130,7 @@
     </div>
   </section>
 
-  <section id="town">
+  <section data-reveal id="town">
     <div class="wrap town">
       <div class="pics">
         <img src="/img/town_street.jpg" width="460" height="1000" loading="lazy" alt="パステルカラーのお店が並ぶ通り">
@@ -140,7 +148,7 @@
     </div>
   </section>
 
-  <section class="promise">
+  <section data-reveal class="promise">
     <div class="wrap">
       <h2>だれにでもやさしい設計</h2>
       <p class="sub">シニアの方や、ゲームがはじめての方にも。</p>
@@ -183,5 +191,19 @@
     <p>© 2026 ShibaLife</p>
   </div>
 </footer>
+<script>
+  // Sections fade in as they scroll into view.
+  (function () {
+    var els = document.querySelectorAll('.reveal, [data-reveal] > .wrap');
+    els.forEach(function (e) { e.classList.add('reveal'); });
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (e) { io.observe(e); });
+    // Safety net: never leave anything hidden (fast jumps, old browsers, screenshots, crawlers).
+    setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 2500);
+  })();
+</script>
 </body>
 </html>
