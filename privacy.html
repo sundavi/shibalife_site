@@ -37,8 +37,8 @@
     <h2>1. 取得する情報と利用目的</h2>
     <div class="table-scroll"><table>
       <tr><th>情報</th><th>利用目的</th><th>送信先</th></tr>
-      <tr><td>Appleでサインインの識別子、表示名（任意）</td><td>アカウントの作成・ログイン、ゲームデータの引き継ぎ</td><td>Google Firebase（認証・データベース）</td></tr>
-      <tr><td>生年月日（年齢の判定のみ）</td><td>18歳未満の方への広告・購入の保護（トラッキングの確認を表示せず、パーソナライズしない広告のみ）</td><td>Google Firebase</td></tr>
+      <tr><td>Appleでサインインの識別子、表示名（サインインした場合のみ。サインインは任意です）</td><td>アカウントの作成・ログイン、引き継ぎコードによるゲームデータの引き継ぎ</td><td>Google Firebase（認証・データベース）</td></tr>
+      <tr><td>生年月日（年齢の判定のみ）</td><td>18歳未満の方への広告・購入の保護（トラッキングの確認を表示せず、パーソナライズしない広告のみ）</td><td>端末内に保存。サインインした場合はGoogle Firebaseにも保存</td></tr>
       <tr><td>位置情報</td><td>実際のお散歩を地図に表示、近くの場所の検出。<strong>正確な位置は端末の外へ送信しません。</strong></td><td>送信しません（端末内のみ）</td></tr>
       <tr><td>約1kmに丸めたおおまかな位置（および通信に伴うIPアドレス）</td><td>天気の取得、お散歩の町並み（住宅街・商店街など）の判定。結果は端末内に保存し、同じ地域については再送信しません。</td><td>Open-Meteo（天気）、OpenStreetMap Overpass API（建物の数のみ）</td></tr>
       <tr><td>歩数（モーションとフィットネス）</td><td>お散歩中の歩数の記録</td><td>送信しません（端末内のみ）</td></tr>
@@ -58,7 +58,7 @@
     <p>Google（Firebase、AdMob、AdSense）はアメリカ合衆国などの国外のサーバーで情報を扱います。これらの事業者は、自社のプライバシーポリシーおよび個人情報の保護に関する措置（国際的な枠組みへの準拠等）に基づいて情報を取り扱います。各サービスの取り扱いは、それぞれのプライバシーポリシー（Google、Apple、Open-Meteo、OpenStreetMap Foundation）をご確認ください。</p>
 
     <h2>4. データの保存と削除</h2>
-    <p>ゲームの進行データは主に端末内に保存されます。アカウント情報（表示名・生年月日・購入に関する記録）はGoogle Firebaseに保存され、アカウントを削除するまで保持します。「引き継ぎコード」を作成した場合は、そのコードに紐づくゲームデータの写しもサーバーに保存され、アカウントの削除時に削除されます。分析・クラッシュ情報は、Googleの定める期間（最長14か月程度）で自動的に削除されます。</p>
+    <p>ゲームの進行データは端末内に保存されます。サインインせずに遊ぶ場合、表示名と生年月日も端末内にのみ保存されます。サインインした場合、アカウント情報（表示名・生年月日・購入に関する記録）はGoogle Firebaseに保存され、アカウントを削除するまで保持します。「引き継ぎコード」を作成した場合は、そのコードに紐づくゲームデータの写しもサーバーに保存され、アカウントの削除時に削除されます。分析・クラッシュ情報は、Googleの定める期間（最長14か月程度）で自動的に削除されます。</p>
     <p>アプリの「設定」→「アカウントを削除」から、アカウントとサーバー上のデータをいつでも削除できます。保有する個人情報の開示・訂正・利用停止等のご請求は、お問い合わせ先までご連絡ください。お散歩・おやつのお知らせは設定からオフにできます。</p>
 
     <h2>5. お子さまの利用</h2>
@@ -79,8 +79,8 @@
     <h2>1. What we collect and why</h2>
     <div class="table-scroll"><table>
       <tr><th>Information</th><th>Purpose</th><th>Sent to</th></tr>
-      <tr><td>Sign in with Apple identifier, display name (optional)</td><td>Creating your account, signing in, carrying your game over</td><td>Google Firebase (authentication, database)</td></tr>
-      <tr><td>Date of birth (used only to tell your age)</td><td>Ad and purchase safeguards for under-18s (no tracking prompt, non-personalised ads only)</td><td>Google Firebase</td></tr>
+      <tr><td>Sign in with Apple identifier, display name (only if you sign in; signing in is optional)</td><td>Creating your account, signing in, carrying your game over with a transfer code</td><td>Google Firebase (authentication, database)</td></tr>
+      <tr><td>Date of birth (used only to tell your age)</td><td>Ad and purchase safeguards for under-18s (no tracking prompt, non-personalised ads only)</td><td>Stored on your device; also in Google Firebase if you sign in</td></tr>
       <tr><td>Location</td><td>Showing your real walk on the map and finding places nearby. <strong>Your exact location never leaves your phone.</strong></td><td>Not sent (stays on your device)</td></tr>
       <tr><td>A rough area, rounded to about 1 km (and the IP address any internet request carries)</td><td>Looking up the weather, and the kind of town the walk shows (residential, shopping street…). The result is kept on your phone and the same area isn't looked up again.</td><td>Open-Meteo (weather), OpenStreetMap Overpass API (building counts only)</td></tr>
       <tr><td>Step count (Motion &amp; Fitness)</td><td>Counting your steps during walks</td><td>Not sent (stays on your device)</td></tr>
@@ -100,7 +100,7 @@
     <p>Google (Firebase, AdMob, AdSense) processes information on servers outside Japan, including in the United States, under its own privacy policy and data-protection safeguards. Each service handles data under its own privacy policy (Google, Apple, Open-Meteo, OpenStreetMap Foundation).</p>
 
     <h2>4. Storage and deletion</h2>
-    <p>Your game progress is mainly stored on your device. Account information (display name, date of birth and purchase records) is stored in Google Firebase until you delete your account. If you make a transfer code, a copy of your game save is kept on the server under that code and removed when you delete your account. Analytics and crash data are deleted automatically on Google's schedule (up to about 14 months).</p>
+    <p>Your game progress is stored on your device. If you play without signing in, your display name and date of birth stay on your device too. If you sign in, account information (display name, date of birth and purchase records) is stored in Google Firebase until you delete your account. If you make a transfer code, a copy of your game save is kept on the server under that code and removed when you delete your account. Analytics and crash data are deleted automatically on Google's schedule (up to about 14 months).</p>
     <p>You can delete your account and its server data at any time in Settings → Delete account. To ask to see, correct or stop the use of the personal information we hold, contact us below. Walk and treat reminders can be switched off in Settings.</p>
 
     <h2>5. Children</h2>
