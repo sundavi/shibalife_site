@@ -33,18 +33,20 @@
     <div class="code" id="code"></div>
     <ol class="steps">
       <li>App Storeから「柴ライフ」をダウンロード</li>
-      <li>設定 → 友だち で、サインインしてこのコードを入力</li>
-      <li>ふたりとも ホネ300個 プレゼント！</li>
+      <li>下の「アプリで開く」をタップ（または 友だち の画面でこのコードを入力）</li>
+      <li>はじめての方なら、ふたりとも ホネ300個 プレゼント！</li>
     </ol>
+    <p><a class="btn" id="open" href="#">アプリで開く</a></p>
   </div>
   <p><a class="btn" href="https://apps.apple.com/app/id6815152223">App Storeで見る</a></p>
-  <p class="en" lang="en">You've been invited to ShibaLife. Get the app, then enter your friend's code in Settings → Friends, and you both get 300 Bones.</p>
+  <p class="en" lang="en">You've been invited to ShibaLife. Get the app, then tap "Open in the app" (or enter the code on the Friends screen). New players and their friend both get 300 Bones.</p>
 </main>
 <script>
   const c = new URLSearchParams(location.search).get('c');
   if (c && /^TOMO-[0-9A-Z]{6}$/.test(c)) {
     document.getElementById('code').textContent = c;
     document.getElementById('withcode').hidden = false;
+    document.getElementById('open').href = 'shibalife://invite?c=' + encodeURIComponent(c);
   }
 </script>
 </body>
