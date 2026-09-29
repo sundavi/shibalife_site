@@ -31,94 +31,124 @@
 <main class="wrap">
   <article class="doc" id="ja">
     <h1>プライバシーポリシー</h1>
-    <p>最終更新日：2026年9月27日</p>
+    <p>最終更新日：2026年9月29日（ポリシー版 2026-09-29）</p>
     <p>柴ライフ（ShibaLife、以下「本アプリ」）の運営者（以下「当方」）は、利用者の情報を次のとおり取り扱います。当方の氏名・住所等は、お問い合わせ先までご請求いただければ遅滞なくお知らせします。</p>
 
     <h2>1. 取得する情報と利用目的</h2>
     <div class="table-scroll"><table>
       <tr><th>情報</th><th>利用目的</th><th>送信先</th></tr>
       <tr><td>Appleでサインインの識別子、表示名（サインインした場合のみ。サインインは任意です）</td><td>アカウントの作成・ログイン、引き継ぎコードによるゲームデータの引き継ぎ</td><td>Google Firebase（認証・データベース）</td></tr>
-      <tr><td>生年月日（年齢の判定のみ）</td><td>18歳未満の方への広告・購入の保護（トラッキングの確認を表示せず、パーソナライズしない広告のみ）</td><td>端末内に保存。サインインした場合はGoogle Firebaseにも保存</td></tr>
+      <tr><td>生年月日（任意・年齢の判定のみ）</td><td>18歳未満の方への広告・購入の保護。入力しない場合も18歳未満向けの保護が適用されます</td><td>端末内に保存。サインインした場合はGoogle Firebaseにも保存</td></tr>
       <tr><td>位置情報</td><td>実際のお散歩を地図に表示、近くの場所の検出。<strong>正確な位置は端末の外へ送信しません。</strong></td><td>送信しません（端末内のみ）</td></tr>
       <tr><td>約1kmに丸めたおおまかな位置（および通信に伴うIPアドレス）</td><td>天気の取得、お散歩の町並み（住宅街・商店街など）の判定。結果は端末内に保存し、同じ地域については再送信しません。</td><td>Open-Meteo（天気）、OpenStreetMap Overpass API（建物の数のみ）</td></tr>
       <tr><td>歩数（モーションとフィットネス）</td><td>お散歩中の歩数の記録</td><td>送信しません（端末内のみ）</td></tr>
       <tr><td>マイク・音声認識</td><td>「呼ぶ」ボタンを押している間だけ、犬の名前を聞き取るため。録音・保存はしません。端末内で処理できない機種では、Appleの音声認識サービスが使われます。</td><td>Apple（端末内で処理できない場合のみ）</td></tr>
-      <tr><td>アプリの利用状況、クラッシュ情報</td><td>不具合の修正と改善</td><td>Google Firebase（Analytics・Crashlytics）</td></tr>
+      <tr><td>アプリの利用状況（起動・画面の表示・利用時間などの自動的な統計）、クラッシュ・不具合の診断情報（端末の機種、OSのバージョン、発生時の状態）</td><td>不具合の修正と改善。「設定」→「規約・プライバシー」→「利用状況・クラッシュ情報を送る」をオフにすると送信しません。</td><td>Google Firebase（Analytics・Crashlytics）</td></tr>
+      <tr><td>端末・アプリの識別子（Firebaseのインストールごとの識別子、アプリ内で作る無作為のインストールID）</td><td>統計・クラッシュ情報・通知・設定配信（Remote Config）の仕組みのため、規約への同意の記録のため。広告識別子（IDFA）は使いません。</td><td>Google Firebase（Analytics・Crashlytics・Messaging・Remote Config）</td></tr>
+      <tr><td>ゲームの進行データ（犬の名前、なかよし度、持ち物、日記など）</td><td>ゲームの保存。「引き継ぎコード」を作った場合のみ、その写しをサーバーに保存します。</td><td>通常は端末内のみ。引き継ぎコード作成時はGoogle Firebase（Firestore）</td></tr>
+      <tr><td>利用規約・プライバシーポリシーへの同意の記録（版、日時、インストールID）</td><td>同意の確認と、改定時に改めて同意をいただくため</td><td>端末内。サインインした場合はGoogle Firebase（Firestore）</td></tr>
+      <tr><td>カメラ</td><td>使用しません（「写真」ボタンは、ゲーム画面を写真アプリに保存するだけで、カメラは使いません）。</td><td>—</td></tr>
+      <tr><td>写真（追加のみ）</td><td>撮ったゲーム画面を写真アプリに保存するため。写真を読み取ることはありません。</td><td>送信しません（端末内のみ）</td></tr>
       <tr><td>通知用のトークン</td><td>お知らせの配信（お散歩・おやつのお知らせは端末内で予約され、外部へは送信しません）</td><td>Google Firebase Cloud Messaging</td></tr>
-      <tr><td>広告識別子（IDFA、許可した場合のみ）、端末・利用状況に関する情報</td><td>アプリ内での広告の表示・効果測定（許可した場合は、興味・関心に合わせた広告）</td><td>Google AdMob などの広告配信事業者</td></tr>
+      <tr><td>端末・利用状況に関する情報（広告識別子（IDFA）は使いません）</td><td>アプリ内での広告の表示・効果測定（すべて、興味・関心に合わせないパーソナライズなしの広告です）</td><td>Google AdMob などの広告配信事業者</td></tr>
       <tr><td>友だち機能：フレンドコード、表示名、犬の名前、友だちの一覧、「つつく」「ホネをあげる」の記録（友だち機能を使った場合のみ）</td><td>友だちの招待・追加、友だち同士のあいさつとホネのやりとり。表示名と犬の名前は、友だちになった相手に表示されます。</td><td>Google Firebase（データベース）</td></tr>
-      <tr><td>購入履歴</td><td>見た目アイテムの購入の確認</td><td>Apple（App Store）。当方はカード情報を取得しません。</td></tr>
+      <tr><td>購入・サブスクリプションの情報（購入したアイテム・ホシのパック、SLケネルクラブの加入状態と更新日、会員番号）</td><td>購入の確認と反映、特典のホシのお届け、購入の復元</td><td>Apple（App Store）。当方はカード情報・請求先を取得しません。</td></tr>
     </table></div>
 
     <h2>2. 広告について</h2>
     <p>本アプリおよび本ウェブサイト（shibalife.jp）では、動画広告・バナー広告などの広告を表示する場合があり、広告の種類や表示場所は今後変わることがあります。広告は Google AdMob、Google AdSense などの第三者の広告配信事業者によって配信され、これらの事業者は広告の表示・効果測定のために、端末の識別子やCookie等の情報を利用することがあります。</p>
-    <p>アプリでは、トラッキングの許可（App Tracking Transparency）を求める画面で「許可しない」を選ぶと、興味・関心に基づく広告は表示されません。18歳未満の方には許可の確認を表示せず、パーソナライズしない広告のみをお届けします。ウェブサイトでのパーソナライズ広告は、<a href="https://adssettings.google.com/" rel="noopener">Googleの広告設定</a>から無効にできます。</p>
+    <p>アプリはトラッキングを行いません。トラッキングの許可（App Tracking Transparency）を求めることもなく、アプリ内の広告（任意のボーナス動画のみ）はすべてパーソナライズしない広告です。ウェブサイトでのパーソナライズ広告は、<a href="https://adssettings.google.com/" rel="noopener">Googleの広告設定</a>から無効にできます。</p>
 
     <h2>3. 第三者への提供・外国にある第三者への提供</h2>
     <p>上記の外部サービスへの送信（広告・分析のための端末識別子等の送信を含みます）および法令に基づく場合を除き、利用者の情報を第三者に提供することはありません。利用者の情報を販売することはありません。</p>
     <p>Google（Firebase、AdMob、AdSense）はアメリカ合衆国などの国外のサーバーで情報を扱います。これらの事業者は、自社のプライバシーポリシーおよび個人情報の保護に関する措置（国際的な枠組みへの準拠等）に基づいて情報を取り扱います。各サービスの取り扱いは、それぞれのプライバシーポリシー（Google、Apple、Open-Meteo、OpenStreetMap Foundation）をご確認ください。</p>
 
     <h2>4. データの保存と削除</h2>
-    <p>ゲームの進行データは端末内に保存されます。サインインせずに遊ぶ場合、表示名と生年月日も端末内にのみ保存されます。サインインした場合、アカウント情報（表示名・生年月日・購入に関する記録）はGoogle Firebaseに保存され、アカウントを削除するまで保持します。「引き継ぎコード」を作成した場合は、そのコードに紐づくゲームデータの写しもサーバーに保存され、アカウントの削除時に削除されます。友だち機能のデータ（フレンドコード、友だちの一覧、受け取った「つつく」など）もアカウントの削除時に削除されます。ただし、相手の友だち一覧に表示されていたあなたの表示名と犬の名前は、相手側に残る場合があります。分析・クラッシュ情報は、Googleの定める期間（最長14か月程度）で自動的に削除されます。</p>
+    <p>ゲームの進行データは端末内に保存されます。サインインせずに遊ぶ場合、表示名と（入力した場合は）生年月日も端末内にのみ保存されます。サインインした場合、アカウント情報（表示名・入力した場合は生年月日・購入に関する記録）はGoogle Firebaseに保存され、アカウントを削除するまで保持します。「引き継ぎコード」を作成した場合は、そのコードに紐づくゲームデータの写しもサーバーに保存され、アカウントの削除時に削除されます。友だち機能のデータ（フレンドコード、友だちの一覧、受け取った「つつく」など）もアカウントの削除時に削除されます。ただし、相手の友だち一覧に表示されていたあなたの表示名と犬の名前は、相手側に残る場合があります。分析・クラッシュ情報は、Googleの定める期間（Analyticsは14か月、Crashlyticsは90日）で自動的に削除されます。</p>
+    <div class="table-scroll"><table>
+      <tr><th>データ</th><th>保存期間</th></tr>
+      <tr><td>端末内のゲームデータ・同意の記録</td><td>アプリを削除するか「はじめからやりなおす」まで（同意の記録はアプリの削除まで）</td></tr>
+      <tr><td>アカウント情報・友だち機能のデータ・同意の記録（サーバー）</td><td>アカウントを削除するまで</td></tr>
+      <tr><td>引き継ぎコードのゲームデータの写し</td><td>アカウントを削除するまで（コードを作り直すと上書きされます）</td></tr>
+      <tr><td>利用状況（Analytics）</td><td>14か月</td></tr>
+      <tr><td>クラッシュ情報（Crashlytics）</td><td>90日</td></tr>
+      <tr><td>購入・サブスクリプションの記録</td><td>Appleが保管します（Appleのプライバシーポリシーに従います）</td></tr>
+    </table></div>
     <p>アプリの「設定」→「アカウントを削除」から、アカウントとサーバー上のデータをいつでも削除できます。保有する個人情報の開示・訂正・利用停止等のご請求は、お問い合わせ先までご連絡ください。お散歩・おやつのお知らせは設定からオフにできます。</p>
 
     <h2>5. お子さまの利用</h2>
-    <p>本アプリは全年齢向けです。18歳未満の方には、前記のとおり広告と購入の保護を行います。</p>
+    <p>本アプリは全年齢向けです。18歳未満の方には、前記のとおり広告と購入の保護を行います（広告はすべてパーソナライズなし・子ども向けの設定で配信し、トラッキングの許可を求めることはありません）。13歳未満のお子さまの情報を意図して集めることはありません。お子さまが保護者の同意なく情報を提供されたと思われる場合は、お問い合わせ先までご連絡ください。速やかに削除します。18歳未満の方がアイテムを購入する場合は、保護者の方の同意を得てください（Appleの「承認と購入のリクエスト」もご利用いただけます）。</p>
 
     <h2>6. 改定</h2>
-    <p>本ポリシーを変更する場合は、このページでお知らせします。</p>
+    <p>本ポリシーを変更する場合は、このページでお知らせします。情報の使い方を大きく変える場合は、アプリ内で改めて同意をおたずねします。</p>
 
     <h2>7. お問い合わせ</h2>
-    <p>ShibaLife サポート：<a href="mailto:shibalife.support@gmail.com">shibalife.support@gmail.com</a></p>
+    <p>ShibaLife サポート：<a href="mailto:shibalife.support@gmail.com">shibalife.support@gmail.com</a>（個人情報の開示・訂正・削除・利用停止のご請求もこちらへ。アプリの「設定」→「規約・プライバシー」→「お問い合わせ・プライバシーのご請求」からも送れます。）</p>
+    <p>利用規約は<a href="/terms.html">こちら</a>。</p>
   </article>
 
   <article class="doc" id="en" lang="en">
     <h1>Privacy Policy</h1>
-    <p>Last updated: 27 September 2026</p>
+    <p>Last updated: 29 September 2026 (policy version 2026-09-29)</p>
     <p>This policy explains how the operator ("we") of ShibaLife (柴ライフ, "the app") handles your information. Our name and address are available on request from the contact below.</p>
 
     <h2>1. What we collect and why</h2>
     <div class="table-scroll"><table>
       <tr><th>Information</th><th>Purpose</th><th>Sent to</th></tr>
       <tr><td>Sign in with Apple identifier, display name (only if you sign in; signing in is optional)</td><td>Creating your account, signing in, carrying your game over with a transfer code</td><td>Google Firebase (authentication, database)</td></tr>
-      <tr><td>Date of birth (used only to tell your age)</td><td>Ad and purchase safeguards for under-18s (no tracking prompt, non-personalised ads only)</td><td>Stored on your device; also in Google Firebase if you sign in</td></tr>
+      <tr><td>Date of birth (optional, used only to tell your age)</td><td>Ad and purchase safeguards for under-18s. If you skip it, the under-18 safeguards apply</td><td>Stored on your device; also in Google Firebase if you sign in</td></tr>
       <tr><td>Location</td><td>Showing your real walk on the map and finding places nearby. <strong>Your exact location never leaves your phone.</strong></td><td>Not sent (stays on your device)</td></tr>
       <tr><td>A rough area, rounded to about 1 km (and the IP address any internet request carries)</td><td>Looking up the weather, and the kind of town the walk shows (residential, shopping street…). The result is kept on your phone and the same area isn't looked up again.</td><td>Open-Meteo (weather), OpenStreetMap Overpass API (building counts only)</td></tr>
       <tr><td>Step count (Motion &amp; Fitness)</td><td>Counting your steps during walks</td><td>Not sent (stays on your device)</td></tr>
       <tr><td>Microphone and speech recognition</td><td>Only while you hold Call, to hear your dog's name. Nothing is recorded or stored. On devices that can't recognise speech on-device, Apple's speech service is used.</td><td>Apple (only when on-device recognition isn't available)</td></tr>
-      <tr><td>App usage and crash reports</td><td>Fixing bugs and improving the app</td><td>Google Firebase (Analytics, Crashlytics)</td></tr>
+      <tr><td>App usage (automatic statistics such as launches, screens viewed and time spent) and crash and diagnostic information (device model, OS version, the app's state at the time)</td><td>Fixing bugs and improving the app. Turn off Settings → Legal &amp; Privacy → Share usage &amp; crash reports to stop sending it.</td><td>Google Firebase (Analytics, Crashlytics)</td></tr>
+      <tr><td>Device and app identifiers (Firebase's per-install identifier, and a random install ID the app creates)</td><td>Needed for statistics, crash reports, notifications and settings delivery (Remote Config), and to record your agreement to the Terms. The advertising ID (IDFA) is not used.</td><td>Google Firebase (Analytics, Crashlytics, Messaging, Remote Config)</td></tr>
+      <tr><td>Game progress (your dog's name, bond, items, diary and so on)</td><td>Saving your game. Only if you create a transfer code is a copy kept on the server.</td><td>Normally on your device only; Google Firebase (Firestore) if you create a transfer code</td></tr>
+      <tr><td>Your agreement to the Terms of Use and Privacy Policy (version, time, install ID)</td><td>Confirming your agreement, and asking again if they change</td><td>On your device; also Google Firebase (Firestore) if you sign in</td></tr>
+      <tr><td>Camera</td><td>Not used. (The Photo button saves a picture of the game screen to Photos; it doesn't use the camera.)</td><td>—</td></tr>
+      <tr><td>Photos (add only)</td><td>Saving the game pictures you take to Photos. The app never reads your photos.</td><td>Not sent (stays on your device)</td></tr>
       <tr><td>Notification token</td><td>Delivering notices (walk and treat reminders are scheduled on your device and not sent anywhere)</td><td>Google Firebase Cloud Messaging</td></tr>
-      <tr><td>The advertising ID (IDFA, only if you allow it), and device and usage information</td><td>Showing ads in the app and measuring them (and, if you allow it, ads tailored to your interests)</td><td>Google AdMob and other ad networks</td></tr>
+      <tr><td>Device and usage information (the advertising ID, IDFA, is not used)</td><td>Showing ads in the app and measuring them (always non-personalised, never tailored to your interests)</td><td>Google AdMob and other ad networks</td></tr>
       <tr><td>Friends: your friend code, display name, dog's name, your friends list, and pokes and bones sent between friends (only if you use Friends)</td><td>Inviting and adding friends, and saying hello and giving bones to each other. Your display name and dog's name are shown to the people you become friends with.</td><td>Google Firebase (database)</td></tr>
-      <tr><td>Purchase history</td><td>Confirming cosmetic purchases</td><td>Apple (App Store). We never receive your card details.</td></tr>
+      <tr><td>Purchase and subscription information (items and Star packs bought, your SL Kennel Club status and renewal date, member number)</td><td>Confirming and applying purchases, delivering bonus Stars, restoring purchases</td><td>Apple (App Store). We never receive your card or billing details.</td></tr>
     </table></div>
 
     <h2>2. Advertising</h2>
     <p>The app and this website (shibalife.jp) may show ads, such as video and banner ads, and the kinds and placement of ads may change over time. Ads are served by third-party ad networks such as Google AdMob and Google AdSense, which may use device identifiers, cookies and similar information to show and measure ads.</p>
-    <p>In the app, if you decline the tracking prompt (App Tracking Transparency), you won't see interest-based ads. Under-18s never see the tracking prompt and only receive non-personalised ads. On the website, you can turn off personalised ads in <a href="https://adssettings.google.com/" rel="noopener">Google's Ad Settings</a>.</p>
+    <p>The app does not track you. It never asks for tracking permission (App Tracking Transparency), and its only ads (the optional bonus video) are always non-personalised. On the website, you can turn off personalised ads in <a href="https://adssettings.google.com/" rel="noopener">Google's Ad Settings</a>.</p>
 
     <h2>3. Sharing and international transfers</h2>
     <p>We don't sell your information. Apart from what is sent to the services listed above (including device identifiers sent for ads and analytics) and where required by law, we don't share it with third parties.</p>
     <p>Google (Firebase, AdMob, AdSense) processes information on servers outside Japan, including in the United States, under its own privacy policy and data-protection safeguards. Each service handles data under its own privacy policy (Google, Apple, Open-Meteo, OpenStreetMap Foundation).</p>
 
     <h2>4. Storage and deletion</h2>
-    <p>Your game progress is stored on your device. If you play without signing in, your display name and date of birth stay on your device too. If you sign in, account information (display name, date of birth and purchase records) is stored in Google Firebase until you delete your account. If you make a transfer code, a copy of your game save is kept on the server under that code and removed when you delete your account. Friends data (your friend code, friends list and received pokes) is deleted with your account too, though your display name and dog's name may remain in the friends lists of people you were friends with. Analytics and crash data are deleted automatically on Google's schedule (up to about 14 months).</p>
+    <p>Your game progress is stored on your device. If you play without signing in, your display name and date of birth (if you gave it) stay on your device too. If you sign in, account information (display name, date of birth if given, and purchase records) is stored in Google Firebase until you delete your account. If you make a transfer code, a copy of your game save is kept on the server under that code and removed when you delete your account. Friends data (your friend code, friends list and received pokes) is deleted with your account too, though your display name and dog's name may remain in the friends lists of people you were friends with. Analytics and crash data are deleted automatically on Google's schedule (14 months for Analytics, 90 days for Crashlytics).</p>
+    <div class="table-scroll"><table>
+      <tr><th>Data</th><th>How long it's kept</th></tr>
+      <tr><td>Game data and agreement record on your device</td><td>Until you delete the app or use Start fresh (the agreement record until you delete the app)</td></tr>
+      <tr><td>Account, Friends data and agreement record on our servers</td><td>Until you delete your account</td></tr>
+      <tr><td>A transfer code's copy of your game</td><td>Until you delete your account (making a new code replaces it)</td></tr>
+      <tr><td>Usage statistics (Analytics)</td><td>14 months</td></tr>
+      <tr><td>Crash reports (Crashlytics)</td><td>90 days</td></tr>
+      <tr><td>Purchase and subscription records</td><td>Kept by Apple, under Apple's privacy policy</td></tr>
+    </table></div>
     <p>You can delete your account and its server data at any time in Settings → Delete account. To ask to see, correct or stop the use of the personal information we hold, contact us below. Walk and treat reminders can be switched off in Settings.</p>
 
     <h2>5. Children</h2>
-    <p>The app is suitable for all ages. For under-18s, the ad and purchase safeguards described above apply.</p>
+    <p>The app is suitable for all ages. For under-18s, the ad and purchase safeguards described above apply (ads are always non-personalised and child-directed, and tracking permission is never requested). We don't knowingly collect information from children under 13. If you believe a child has given us information without a parent's consent, contact us and we'll delete it promptly. Under-18s should have a parent's permission before buying anything (Apple's Ask to Buy can help).</p>
 
     <h2>6. Changes</h2>
-    <p>If this policy changes, we'll post the update on this page.</p>
+    <p>If this policy changes, we'll post the update on this page. If we make a significant change to how your information is used, we'll ask for your agreement again in the app.</p>
 
     <h2>7. Contact</h2>
-    <p>ShibaLife support: <a href="mailto:shibalife.support@gmail.com">shibalife.support@gmail.com</a></p>
+    <p>ShibaLife support: <a href="mailto:shibalife.support@gmail.com">shibalife.support@gmail.com</a> (including requests to see, correct, delete or stop the use of your personal information; you can also write from Settings → Legal &amp; Privacy → Contact &amp; privacy requests in the app).</p>
+    <p>See also our <a href="/terms.html">Terms of Use</a>.</p>
   </article>
 </main>
 
 <footer>
   <div class="wrap">
-    <nav><a href="/">柴ライフ トップ</a><a href="/en/" lang="en">ShibaLife (English)</a><a href="mailto:shibalife.support@gmail.com">お問い合わせ / Contact</a></nav>
+    <nav><a href="/">柴ライフ トップ</a><a href="/en/" lang="en">ShibaLife (English)</a><a href="/terms.html">利用規約 / Terms</a><a href="mailto:shibalife.support@gmail.com">お問い合わせ / Contact</a></nav>
     <p>© 2026 ShibaLife</p>
   </div>
 </footer>
