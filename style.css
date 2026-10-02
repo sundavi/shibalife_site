@@ -92,10 +92,12 @@ h2 + .sub { text-align: center; color: var(--ink-soft); margin: 0 auto 34px; max
 .card { background: var(--paper); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
 .card h3 { margin: 6px 0 6px; font-size: 1.12rem; }
 .card p { margin: 0; color: var(--ink-soft); font-size: .97rem; }
-.emoji { font-size: 1.8rem; }
+.card .ic { width: 64px; height: 64px; display: block; }
 
 /* Screenshots */
-.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px; align-items: start; }
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: start; }   /* six shots: 6, 3 or 2 across, never a lone one */
+@media (min-width: 1000px) { .shots { grid-template-columns: repeat(6, 1fr); } }
+@media (max-width: 520px) { .shots { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
 .shots figure { margin: 0; text-align: center; }
 .shots img { border-radius: 30px; border: 6px solid #fff; box-shadow: var(--shadow); width: 100%; height: auto; max-width: 300px; margin: 0 auto; box-sizing: content-box; }
 .shots figure { max-width: 312px; margin: 0 auto; width: 100%; }
