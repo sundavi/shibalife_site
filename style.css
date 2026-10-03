@@ -98,6 +98,10 @@ h2 + .sub { text-align: center; color: var(--ink-soft); margin: 0 auto 34px; max
 .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: start; }   /* six shots: 6, 3 or 2 across, never a lone one */
 @media (min-width: 1000px) { .shots { grid-template-columns: repeat(6, 1fr); } }
 @media (max-width: 520px) { .shots { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+/* The seasons: four across, two by two on narrow screens. */
+.shots.four { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 760px) { .shots.four { grid-template-columns: repeat(4, 1fr); } }
+.shots figcaption small { display: block; font-weight: 500; font-size: .85rem; color: var(--muted, #8a7a80); margin-top: 2px; }
 .shots figure { margin: 0; text-align: center; }
 .shots img { border-radius: 30px; border: 6px solid #fff; box-shadow: var(--shadow); width: 100%; height: auto; max-width: 300px; margin: 0 auto; box-sizing: content-box; }
 .shots figure { max-width: 312px; margin: 0 auto; width: 100%; }
