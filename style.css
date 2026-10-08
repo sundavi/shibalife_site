@@ -137,3 +137,12 @@ details p { margin: 10px 0 0; color: var(--ink-soft); }
 
 footer { padding: 34px 0 44px; text-align: center; color: var(--ink-soft); font-size: .9rem; }
 footer nav { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+
+/* Social links (TikTok, Instagram, Threads) */
+.social { display: flex; gap: 12px; justify-content: center; margin: 18px 0 4px; }
+.social a { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--paper); border: 1.5px solid var(--line); color: var(--ink); transition: transform .15s ease, border-color .15s ease; }
+.social a:hover { transform: translateY(-2px); border-color: var(--pink); color: var(--pink-deep); }
+.social svg { width: 22px; height: 22px; fill: currentColor; }
+.social.small { margin: 0 0 14px; }
+.note.follow { margin-top: 4px; }
