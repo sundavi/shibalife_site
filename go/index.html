@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ダウンロード ｜ 柴ライフ ShibaLife</title>
+<meta name="description" content="柴ライフ（ShibaLife）のダウンロード。お使いの端末に合わせてストアへご案内します。">
+<meta name="robots" content="noindex">
+<meta name="apple-itunes-app" content="app-id=6815152223">
+<meta property="og:title" content="柴ライフ ShibaLife ｜ 柴犬トシコと暮らすお散歩ゲーム">
+<meta property="og:description" content="赤柴のトシコと暮らす、やさしいお散歩ゲーム。無料でダウンロード。">
+<meta property="og:url" content="https://shibalife.jp/go/">
+<meta property="og:image" content="https://shibalife.jp/img/og.jpg">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<script>
+  // One link for every device (shibalife.jp/go): an iPhone or iPad goes straight to the App Store, an Android
+  // phone to Google Play once there is a version there (set ANDROID below), and anything else sees this page.
+  // ?to=page keeps a device on this page (to look at it); the query is otherwise passed on to the store.
+  var IOS = "https://apps.apple.com/app/id6815152223";
+  var ANDROID = "";   // e.g. "https://play.google.com/store/apps/details?id=com.sundavi.shibalife" when it exists
+  var ua = navigator.userAgent || "";
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = !isAndroid && (/iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1));   // (iPadOS says it is a Mac)
+  var device = isIOS ? "ios" : (isAndroid ? "android" : "other");
+  var stay = /[?&]to=page\b/.test(location.search);
+  if (!stay && device === "ios") location.replace(IOS);
+  if (!stay && device === "android" && ANDROID) location.replace(ANDROID);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .go { max-width: 520px; margin: 0 auto; padding: 32px 20px 48px; text-align: center; }
+  .go img.hero { width: 180px; height: auto; }
+  .go .note { color: #7a6a66; font-size: 15px; line-height: 1.7; margin-top: 18px; }
+  .go .en { color: #7a6a66; font-size: 15px; margin-top: 28px; line-height: 1.7; }
+  .go [hidden] { display: none; }
+</style>
+</head>
+<body>
+<main class="go">
+  <img class="hero" src="/img/toshiko.png" alt="柴犬のトシコ">
+  <h1>柴ライフ ShibaLife</h1>
+  <p>赤柴のトシコと暮らす、やさしいお散歩ゲーム。</p>
+
+  <!-- iPhone / iPad (also what shows if the jump to the App Store didn't happen), and computers -->
+  <div id="for-ios">
+    <p><a class="btn" href="https://apps.apple.com/app/id6815152223">App Storeでダウンロード</a></p>
+    <p class="note" id="desktop-note" hidden>iPhone・iPad向けのゲームです。お使いのiPhoneでこのページを開くか、App Storeで「柴ライフ」を検索してください。</p>
+  </div>
+
+  <!-- Android, while there is no Android version -->
+  <div id="for-android" hidden>
+    <p class="note">ごめんなさい。柴ライフは、いまのところiPhone・iPad専用です。<br>Android版はまだありません。</p>
+    <p><a class="btn" href="/">柴ライフのサイトを見る</a></p>
+  </div>
+
+  <div class="en" lang="en">
+    <p id="en-ios">ShibaLife is a gentle game about life and walks with Toshiko, a Shiba Inu. Free on the App Store for iPhone and iPad.</p>
+    <p id="en-android" hidden>Sorry: ShibaLife is for iPhone and iPad only at the moment. There is no Android version yet.</p>
+  </div>
+</main>
+<script>
+  if (device === "android" && !ANDROID) {
+    document.getElementById("for-ios").hidden = true; document.getElementById("for-android").hidden = false;
+    document.getElementById("en-ios").hidden = true; document.getElementById("en-android").hidden = false;
+  }
+  if (device === "other") document.getElementById("desktop-note").hidden = false;
+</script>
+<noscript><p style="text-align:center"><a href="https://apps.apple.com/app/id6815152223">App Store</a></p></noscript>
+</body>
+</html>
