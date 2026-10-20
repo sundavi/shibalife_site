@@ -31,7 +31,7 @@
 <main class="wrap">
   <article class="doc" id="ja">
     <h1>プライバシーポリシー</h1>
-    <p>最終更新日：2026年10月7日（ポリシー版 2026-09-29b）</p>
+    <p>最終更新日：2026年10月20日（ポリシー版 2026-09-29b）</p>
     <p>柴ライフ（ShibaLife、以下「本アプリ」）の運営者（以下「当方」）は、利用者の情報を次のとおり取り扱います。当方の氏名・住所等は、お問い合わせ先までご請求いただければ遅滞なくお知らせします。</p>
 
     <h2>1. 取得する情報と利用目的</h2>
@@ -47,6 +47,7 @@
       <tr><td>プレイヤーID（サインインしなくても、はじめて起動したときに自動で作られる無作為の識別子。名前や連絡先は含みません）</td><td>プレイ人数の把握、利用状況・クラッシュ情報・購入の記録を同じプレイヤーのものとしてまとめるため、当方から個別のお知らせを届けるため。サインインすると同じIDがアカウントに引き継がれます。</td><td>Google Firebase（認証・Analytics・Crashlytics）</td></tr>
       <tr><td>端末・アプリの識別子（Firebaseのインストールごとの識別子、アプリ内で作る無作為のインストールID）</td><td>統計・クラッシュ情報・通知・設定配信（Remote Config）の仕組みのため、規約への同意の記録のため。広告識別子（IDFA）は使いません。</td><td>Google Firebase（Analytics・Crashlytics・Messaging・Remote Config）</td></tr>
       <tr><td>ゲームの進行データ（犬の名前、なかよし度、持ち物、日記など）</td><td>ゲームの保存。「引き継ぎコード」を作った場合のみ、その写しをサーバーに保存します。</td><td>通常は端末内のみ。引き継ぎコード作成時はGoogle Firebase（Firestore）</td></tr>
+      <tr><td>ホシ（有料の通貨）の残高と、ホシで手に入れたアイテムの一覧</td><td>アプリを入れ直したときや新しい端末で、購入したものを失わないためのバックアップ</td><td>あなた自身のiCloud（Appleのキー・バリュー保存）。当方には送信されず、当方が見ることもありません</td></tr>
       <tr><td>利用規約・プライバシーポリシーへの同意の記録（版、日時、インストールID）</td><td>同意の確認と、改定時に改めて同意をいただくため</td><td>端末内。サインインした場合はGoogle Firebase（Firestore）</td></tr>
       <tr><td>カメラ</td><td>使用しません（「写真」ボタンは、ゲーム画面を写真アプリに保存するだけで、カメラは使いません）。</td><td>—</td></tr>
       <tr><td>写真（追加のみ）</td><td>撮ったゲーム画面を写真アプリに保存するため。写真を読み取ることはありません。</td><td>送信しません（端末内のみ）</td></tr>
@@ -92,7 +93,7 @@
 
   <article class="doc" id="en" lang="en">
     <h1>Privacy Policy</h1>
-    <p>Last updated: October 7, 2026 (policy version 2026-09-29b)</p>
+    <p>Last updated: October 20, 2026 (policy version 2026-09-29b)</p>
     <p>This policy explains how the operator ("we") of ShibaLife (柴ライフ, "the app") handles your information. Our name and address are available on request from the contact below.</p>
 
     <h2>1. What we collect and why</h2>
@@ -108,6 +109,7 @@
       <tr><td>A player ID (a random identifier made automatically the first time you open the app, even without signing in; it contains no name or contact details)</td><td>Counting players, keeping usage statistics, crash reports and purchase records together as one player's, and sending a message to one player. If you sign in, your account keeps the same ID.</td><td>Google Firebase (authentication, Analytics, Crashlytics)</td></tr>
       <tr><td>Device and app identifiers (Firebase's per-install identifier, and a random install ID the app creates)</td><td>Needed for statistics, crash reports, notifications and settings delivery (Remote Config), and to record your agreement to the Terms. The advertising ID (IDFA) is not used.</td><td>Google Firebase (Analytics, Crashlytics, Messaging, Remote Config)</td></tr>
       <tr><td>Game progress (your dog's name, bond, items, diary and so on)</td><td>Saving your game. Only if you create a transfer code is a copy kept on the server.</td><td>Normally on your device only; Google Firebase (Firestore) if you create a transfer code</td></tr>
+      <tr><td>Your Stars (the paid currency) balance and the list of items bought with Stars</td><td>A backup, so nothing you bought is lost when you reinstall the app or move to a new device</td><td>Your own iCloud (Apple's key-value storage). It is not sent to us and we cannot see it</td></tr>
       <tr><td>Your agreement to the Terms of Use and Privacy Policy (version, time, install ID)</td><td>Confirming your agreement, and asking again if they change</td><td>On your device; also Google Firebase (Firestore) if you sign in</td></tr>
       <tr><td>Camera</td><td>Not used. (The Photo button saves a picture of the game screen to Photos; it doesn't use the camera.)</td><td>—</td></tr>
       <tr><td>Photos (add only)</td><td>Saving the game pictures you take to Photos. The app never reads your photos.</td><td>Not sent (stays on your device)</td></tr>
