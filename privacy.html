@@ -89,6 +89,15 @@
     <h2>7. お問い合わせ</h2>
     <p>ShibaLife サポート：<a href="mailto:shibalife.support@gmail.com">shibalife.support@gmail.com</a>（個人情報の開示・訂正・削除・利用停止のご請求もこちらへ。アプリの「設定」→「規約・プライバシー」→「お問い合わせ・プライバシーのご請求」からも送れます。）</p>
     <p>利用規約は<a href="/terms.html">こちら</a>。</p>
+    <h2 id="youtube-ja">8. 運営チームの管理画面とYouTube（Googleのユーザーデータ）</h2>
+    <p>ゲームアプリそのものはYouTubeのデータを扱いません。運営チームだけが使う非公開の管理画面（shiba-life-dash.web.app）が、YouTube API サービスを使って、柴ライフ自身の動画を柴ライフ自身のYouTubeチャンネルへ投稿します。</p>
+    <ul>
+      <li>使う権限：YouTube動画のアップロード（youtube.upload）のみ。チームのメンバーが投稿したときだけ使い、ほかのYouTubeのデータ（再生履歴、登録チャンネル、他の動画など）は読み取りません。</li>
+      <li>保存するもの：接続したチャンネル名と、Googleが発行するアクセス・更新トークン。Google Firebase（Firestore）に保存し、管理画面以外には使いません。第三者への提供・販売・広告への利用はしません。</li>
+      <li>削除：管理画面の「接続を解除」でトークンをGoogle側でも無効にし、保存したデータを削除します。<a href="https://myaccount.google.com/connections">Googleアカウントのセキュリティ設定</a>からもいつでも解除できます。</li>
+      <li>柴ライフによるGoogle APIから受け取った情報の利用と他アプリへの転送は、<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API サービスのユーザーデータに関するポリシー</a>（限定的使用の要件を含む）に従います。</li>
+      <li>YouTube API サービスの利用にあたっては<a href="https://www.youtube.com/t/terms">YouTube 利用規約</a>と<a href="https://policies.google.com/privacy">Google プライバシーポリシー</a>が適用されます。</li>
+    </ul>
   </article>
 
   <article class="doc" id="en" lang="en">
@@ -151,6 +160,15 @@
     <h2>7. Contact</h2>
     <p>ShibaLife support: <a href="mailto:shibalife.support@gmail.com">shibalife.support@gmail.com</a> (including requests to see, correct, delete or stop the use of your personal information; you can also write from Settings → Legal &amp; Privacy → Contact &amp; privacy requests in the app).</p>
     <p>See also our <a href="/terms.html">Terms of Use</a>.</p>
+    <h2 id="youtube">8. The team's dashboard and YouTube (Google user data)</h2>
+    <p>The game itself does not use any YouTube data. A private dashboard used only by the ShibaLife team (shiba-life-dash.web.app) uses YouTube API Services to upload ShibaLife's own videos to ShibaLife's own YouTube channel.</p>
+    <ul>
+      <li>Permission used: uploading YouTube videos (youtube.upload) only, and only when a team member posts. It does not read any other YouTube data (watch history, subscriptions, other videos and so on).</li>
+      <li>What is stored: the connected channel's name and the access and refresh tokens Google issues, in Google Firebase (Firestore), used for nothing but the dashboard. It is never shared, sold or used for advertising.</li>
+      <li>Deletion: "Disconnect" in the dashboard revokes the tokens at Google and deletes what was stored. Access can also be removed at any time in your <a href="https://myaccount.google.com/connections">Google account's security settings</a>.</li>
+      <li>ShibaLife's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
+      <li>Using YouTube API Services means the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> apply.</li>
+    </ul>
   </article>
 </main>
 
