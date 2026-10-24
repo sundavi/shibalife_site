@@ -100,6 +100,7 @@
     <a class="brand" href="/"><img src="/img/apple-touch-icon.png" alt="" width="36" height="36">柴ライフ</a>
     <nav aria-label="メニュー">
       <a href="#features">あそびかた</a>
+      <a class="hide-sm" href="#mv">MV</a>
       <a class="hide-sm" href="#seasons">季節</a>
       <a class="hide-sm" href="#screens">画面</a>
       <a class="hide-sm" href="#faq">よくある質問</a>
@@ -137,6 +138,21 @@
       </div>
     </div>
   </div>
+
+  <section data-reveal id="mv">
+    <div class="wrap">
+      <h2>オープニングMV</h2>
+      <p class="sub">「しばしば！ワンダフル宣言」。ゲームをはじめると流れる、トシコのテーマソングです。</p>
+      <div class="mv">
+        <button class="mv-play" type="button" data-src="/mv/wonderful/index.m3u8" aria-label="オープニングMV「しばしば！ワンダフル宣言」を再生（1分21秒・音が出ます）">
+          <img src="/mv/wonderful/poster.jpg" width="720" height="1280" loading="lazy" alt="">
+          <span class="mv-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+          <span class="mv-len">1:21</span>
+        </button>
+      </div>
+      <p class="note mv-note">音が出ます ♪ しばしば！ワンダフル宣言</p>
+    </div>
+  </section>
 
   <section data-reveal id="features">
     <div class="wrap">
@@ -256,6 +272,28 @@
     els.forEach(function (e) { io.observe(e); });
     // Safety net: never leave anything hidden (fast jumps, old browsers, screenshots, crawlers).
     setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 2500);
+  })();
+</script>
+<script>
+  // The opening MV: a self-hosted HLS stream (two sizes, the player picks by connection). Safari and iPhone play
+  // it natively; other browsers load hls.js (self-hosted) only when Play is pressed. No YouTube, no tracking.
+  (function () {
+    var b = document.querySelector('.mv-play'); if (!b) return;
+    b.addEventListener('click', function () {
+      var v = document.createElement('video');
+      v.controls = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.poster = b.querySelector('img').src;
+      v.className = 'mv-video'; v.setAttribute('aria-label', b.getAttribute('aria-label'));
+      b.replaceWith(v);
+      var src = b.dataset.src, go = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+      if (v.canPlayType('application/vnd.apple.mpegurl')) { v.src = src; go(); return; }
+      var s = document.createElement('script'); s.src = '/js/hls.light.min.js';
+      s.onload = function () {
+        if (!window.Hls || !window.Hls.isSupported()) { v.src = src; return; }
+        var h = new window.Hls({ capLevelToPlayerSize: true }); h.loadSource(src); h.attachMedia(v);
+        h.on(window.Hls.Events.MANIFEST_PARSED, go);
+      };
+      document.head.appendChild(s);
+    });
   })();
 </script>
 </body>
