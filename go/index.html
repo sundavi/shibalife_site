@@ -15,8 +15,14 @@
 <script>
   // One link for every device (shibalife.jp/go): an iPhone or iPad goes straight to the App Store, an Android
   // phone to Google Play once there is a version there (set ANDROID below), and anything else sees this page.
-  // ?to=page keeps a device on this page (to look at it); the query is otherwise passed on to the store.
+  // ?to=page keeps a device on this page (to look at it).
+  // ?c=<campaign> (e.g. tt, ig, yt, x, or tt_1102 for one post) tags the App Store visit with an Apple campaign link,
+  // so App Store Connect > Analytics > Acquisition > Campaigns shows which posts bring installs. PT is the provider
+  // token App Store Connect shows when generating a campaign link; until it's set, the plain link is used.
+  var PT = "129491368";
   var IOS = "https://apps.apple.com/app/id6815152223";
+  var c = (location.search.match(/[?&]c=([A-Za-z0-9_-]{1,40})/) || [])[1];
+  if (PT && c) IOS = "https://apps.apple.com/app/apple-store/id6815152223?pt=" + PT + "&ct=" + c + "&mt=8";
   var ANDROID = "";   // e.g. "https://play.google.com/store/apps/details?id=com.sundavi.shibalife" when it exists
   var ua = navigator.userAgent || "";
   var isAndroid = /Android/i.test(ua);
